@@ -1,19 +1,32 @@
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Subjects from "../components/Subjects";
+import Features from "../components/Features";
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
-      <div className="text-center">
-        <h1 className="text-6xl font-bold">
-          👨‍🏫 Profe Pedro Calero
-        </h1>
+    <main className="relative overflow-hidden bg-[#050816] text-white">
 
-        <p className="mt-6 text-2xl text-slate-300">
-          Profesor de Tecnología · ESO · Bachillerato · IA · Programación
-        </p>
+      {/* Fondo con luces */}
 
-        <button className="mt-10 bg-cyan-500 hover:bg-cyan-600 px-8 py-4 rounded-xl text-xl font-bold">
-          Bienvenido a mi web
-        </button>
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+
+        <div className="absolute left-10 top-10 h-96 w-96 rounded-full bg-cyan-500/20 blur-3xl"></div>
+
+        <div className="absolute right-0 bottom-0 h-[500px] w-[500px] rounded-full bg-blue-700/20 blur-3xl"></div>
+
+        <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-600/10 blur-3xl"></div>
+
       </div>
+
+      <Navbar />
+
+      <Hero />
+
+      <Subjects />
+
+      <Features />
+
     </main>
   );
 }
