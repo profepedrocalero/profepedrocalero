@@ -1,95 +1,162 @@
+"use client";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 export default function Hero() {
   return (
-    <section className="mx-auto flex min-h-screen max-w-7xl items-center px-8 pt-24">
+    <section className="relative overflow-hidden bg-slate-50">
 
-      {/* IZQUIERDA */}
+      {/* Fondo decorativo */}
 
-      <div className="flex-1">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-cyan-100/70 blur-3xl" />
 
-        <div className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-5 py-2 text-cyan-300">
-
-          🚀 Plataforma educativa de Tecnología
-
-        </div>
-
-        <h1 className="mt-8 text-7xl font-black leading-tight">
-
-          Aprende
-
-          <br />
-
-          <span className="text-cyan-400">
-
-            Tecnología
-
-          </span>
-
-          <br />
-
-          creando.
-
-        </h1>
-
-        <p className="mt-10 max-w-xl text-xl leading-9 text-slate-400">
-
-          Recursos gratuitos para Tecnología e Ingeniería,
-          TIC, Computación y Robótica en ESO y Bachillerato.
-
-        </p>
-
-        <div className="mt-12 flex gap-6">
-
-          <button className="rounded-xl bg-cyan-500 px-8 py-4 text-lg font-bold transition hover:scale-105 hover:bg-cyan-400">
-
-            Explorar recursos
-
-          </button>
-
-          <button className="rounded-xl border border-slate-600 px-8 py-4 text-lg transition hover:border-cyan-400">
-
-            Conóceme
-
-          </button>
-
-        </div>
-
+        <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-blue-100/70 blur-3xl" />
       </div>
 
-      {/* DERECHA */}
+      <div className="mx-auto grid min-h-[90vh] max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-2">
 
-      <div className="hidden flex-1 justify-center lg:flex">
+        {/* TEXTO */}
 
-        <div className="relative">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl"
+        >
 
-          <div className="absolute inset-0 rounded-full bg-cyan-500/20 blur-3xl"></div>
+          <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
+            Profesor de Tecnología e Ingeniería
+          </span>
 
-          <div className="relative flex h-[420px] w-[420px] items-center justify-center rounded-full border border-cyan-500/20 bg-white/5 backdrop-blur-2xl">
+          <h1 className="mt-8 text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+            Aprende Tecnología
 
-            <div className="text-center">
+            <span className="mt-2 block text-cyan-600">
+              construyendo proyectos reales.
+            </span>
+          </h1>
 
-              <div className="text-8xl">
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+            Recursos gratuitos, organizados por asignaturas y cursos,
+            para aprender Tecnología, Programación, Robótica,
+            Inteligencia Artificial y Tecnología e Ingeniería.
+          </p>
 
-                ⚙️
+          <div className="mt-10 flex flex-wrap gap-4">
 
-              </div>
+            <Link href="/recursos">
+              <Button
+                size="lg"
+                className="rounded-xl bg-cyan-600 px-8 font-semibold hover:bg-cyan-700"
+              >
+                Explorar recursos
 
-              <div className="mt-8 text-2xl font-bold">
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
 
-                Tecnología
+            <Link href="/sobre-mi">
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-xl px-8 font-semibold"
+              >
+                Sobre mí
+              </Button>
+            </Link>
 
-              </div>
+          </div>
 
-              <div className="text-slate-400">
+          {/* ESTADÍSTICAS */}
 
-                IA · Python · Arduino
+          <div className="mt-14 flex flex-wrap gap-10 sm:gap-14">
 
-              </div>
+            <div>
+              <p className="text-4xl font-extrabold text-slate-900">
+                300+
+              </p>
 
+              <p className="mt-1 text-sm text-slate-500">
+                Recursos educativos
+              </p>
+            </div>
+
+            <div>
+              <p className="text-4xl font-extrabold text-slate-900">
+                11
+              </p>
+
+              <p className="mt-1 text-sm text-slate-500">
+                Asignaturas
+              </p>
+            </div>
+
+            <div>
+              <p className="text-4xl font-extrabold text-slate-900">
+                ESO
+              </p>
+
+              <p className="mt-1 text-sm text-slate-500">
+                + Bachillerato
+              </p>
             </div>
 
           </div>
 
-        </div>
+        </motion.div>
+
+        {/* ILUSTRACIÓN */}
+
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
+
+          <div className="relative overflow-hidden rounded-[36px] border border-slate-200 bg-white shadow-2xl">
+
+            <img
+              src="/images/hero/profepedrocalero-hero.png"
+              alt="Profesor de Tecnología trabajando con programación, robótica e impresión 3D"
+              className="h-auto w-full"
+            />
+
+          </div>
+
+          {/* Etiqueta inferior */}
+
+          <div className="absolute -bottom-5 -left-5 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-xl">
+
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+              Tecnología
+            </p>
+
+            <p className="mt-1 font-bold text-slate-800">
+              Aprende haciendo
+            </p>
+
+          </div>
+
+          {/* Etiqueta superior */}
+
+          <div className="absolute -right-5 -top-5 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-xl">
+
+            <p className="text-xs font-semibold uppercase tracking-wide text-cyan-600">
+              Recursos
+            </p>
+
+            <p className="mt-1 font-bold text-slate-800">
+              ESO + Bachillerato
+            </p>
+
+          </div>
+
+        </motion.div>
 
       </div>
 
