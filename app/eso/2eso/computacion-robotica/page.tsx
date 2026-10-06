@@ -1,84 +1,44 @@
 import Link from "next/link";
-
 import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
-  Cpu,
+  Bot,
+  Code2,
   FileText,
   FolderKanban,
-  Lightbulb,
+  Globe,
   Monitor,
-  PenTool,
-  Recycle,
-  Settings,
-  Zap,
 } from "lucide-react";
 
 const unidades = [
   {
     numero: "01",
-    titulo: "El proceso de resolución de problemas tecnológicos",
+    titulo: "Pensamiento computacional",
     descripcion:
-      "Analiza problemas, plantea soluciones y aprende las fases del proceso tecnológico.",
-    icon: Lightbulb,
-    href: "/eso/2eso/tecnologia-digitalizacion/unidad-1",
+      "Desarrolla estrategias para analizar problemas, descomponerlos y encontrar soluciones mediante el pensamiento computacional.",
+    icon: Bot,
   },
   {
     numero: "02",
-    titulo: "Pensamiento computacional. Algoritmos y programación",
+    titulo: "Programación",
     descripcion:
-      "Desarrolla el pensamiento lógico mediante algoritmos, programación y resolución de problemas.",
-    icon: Cpu,
-    href: "#",
+      "Aprende los fundamentos de la programación mediante algoritmos, lenguajes de programación y creación de proyectos.",
+    icon: Code2,
   },
   {
     numero: "03",
-    titulo: "Técnicas de representación gráfica",
+    titulo: "Computadoras",
     descripcion:
-      "Aprende a representar ideas y objetos tecnológicos mediante diferentes técnicas gráficas.",
-    icon: PenTool,
-    href: "#",
+      "Conoce los principales componentes de un ordenador, su funcionamiento y la forma en que procesa la información.",
+    icon: Monitor,
   },
   {
     numero: "04",
-    titulo: "Los materiales tecnológicos y su impacto ambiental",
+    titulo: "Redes",
     descripcion:
-      "Conoce los materiales utilizados en tecnología y analiza su impacto sobre el medio ambiente.",
-    icon: Recycle,
-    href: "#",
-  },
-  {
-    numero: "05",
-    titulo: "Estructuras",
-    descripcion:
-      "Descubre cómo funcionan las estructuras, sus elementos y los esfuerzos que soportan.",
-    icon: Settings,
-    href: "#",
-  },
-  {
-    numero: "06",
-    titulo: "Sistemas mecánicos básicos",
-    descripcion:
-      "Comprende el funcionamiento de mecanismos, máquinas y sistemas de transmisión del movimiento.",
-    icon: Settings,
-    href: "#",
-  },
-  {
-    numero: "07",
-    titulo: "Electricidad básica",
-    descripcion:
-      "Aprende los fundamentos de los circuitos eléctricos, sus componentes y magnitudes básicas.",
-    icon: Zap,
-    href: "#",
-  },
-  {
-    numero: "08",
-    titulo: "Digitalización del entorno personal de aprendizaje",
-    descripcion:
-      "Utiliza herramientas digitales para organizar, crear, comunicar y gestionar tu aprendizaje.",
-    icon: Monitor,
-    href: "#",
+      "Comprende cómo se conectan los dispositivos, cómo se comunican y cuáles son los fundamentos de las redes.",
+    icon: Globe,
   },
 ];
 
@@ -86,21 +46,21 @@ const recursos = [
   {
     icon: BookOpen,
     titulo: "Apuntes",
-    descripcion: "Teoría y contenidos de cada unidad.",
+    descripcion: "Explicaciones y contenidos de cada unidad.",
   },
   {
     icon: FileText,
     titulo: "Actividades",
-    descripcion: "Ejercicios para practicar y comprobar lo aprendido.",
+    descripcion: "Ejercicios y retos para poner en práctica lo aprendido.",
   },
   {
     icon: FolderKanban,
     titulo: "Proyectos",
-    descripcion: "Retos tecnológicos para aprender haciendo.",
+    descripcion: "Proyectos de programación, robótica y tecnología.",
   },
 ];
 
-export default function TecnologiaDigitalizacionPage() {
+export default function ComputacionRoboticaPage() {
   return (
     <main className="min-h-screen bg-slate-50">
       {/* CABECERA */}
@@ -117,19 +77,19 @@ export default function TecnologiaDigitalizacionPage() {
 
           <div className="mt-10 max-w-4xl">
             <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-bold text-cyan-700">
-              2º ESO · Tecnología
+              2º ESO · Computación y Robótica
             </span>
 
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-              Tecnología y
+              Computación
               <span className="block text-cyan-600">
-                Digitalización
+                y Robótica
               </span>
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
-              Recursos educativos para aprender Tecnología mediante la
-              resolución de problemas, el diseño, la programación y la
+              Recursos educativos para aprender pensamiento computacional,
+              programación, computadoras y redes mediante la práctica y la
               creación de proyectos.
             </p>
           </div>
@@ -149,8 +109,7 @@ export default function TecnologiaDigitalizacionPage() {
           </h2>
 
           <p className="mt-4 leading-7 text-slate-600">
-            Explora las ocho unidades de Tecnología y Digitalización de
-            2º ESO.
+            Explora las cuatro unidades de Computación y Robótica de 2º ESO.
           </p>
         </div>
 
@@ -160,7 +119,7 @@ export default function TecnologiaDigitalizacionPage() {
 
             return (
               <Link
-                href={unidad.href}
+                href="#"
                 key={unidad.numero}
                 className="group"
               >
@@ -213,8 +172,8 @@ export default function TecnologiaDigitalizacionPage() {
             </h2>
 
             <p className="mt-4 leading-7 text-slate-600">
-              Materiales pensados para combinar explicación, práctica y
-              proyectos tecnológicos.
+              Materiales para aprender programación, computación y robótica
+              de forma práctica.
             </p>
           </div>
 
@@ -251,11 +210,11 @@ export default function TecnologiaDigitalizacionPage() {
         <div className="rounded-[2rem] bg-slate-950 px-8 py-12 sm:px-12 lg:px-16">
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-wider text-cyan-400">
-              Tecnología · 2º ESO
+              Computación y Robótica · 2º ESO
             </p>
 
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-              La Tecnología se aprende creando.
+              Programa. Experimenta. Crea.
             </h2>
 
             <p className="mt-4 max-w-2xl leading-7 text-slate-300">
